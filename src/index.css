@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+@theme {
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+  --color-black: #000000;
+  --color-white: #ffffff;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #pdf-preview-content, #pdf-preview-content * {
+    visibility: visible;
+  }
+  #pdf-preview-content {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background: white;
+    color: black;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .page-break {
+    break-after: page;
+    page-break-after: always;
+  }
+  @page {
+    margin: 10mm;
+    size: auto;
+  }
+}
